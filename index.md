@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: Welcome to ROSMDO + RCPS
+tagline: Homepage for model-driven development of distributed CPS
 ---
 
 <ul class="posts">

@@ -3,7 +3,7 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
+highlighter: rouge
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -13,7 +13,7 @@ tagline: Site Tagline
 author :
   name : William Emfinger, Pranav Srinivas Kumar
   email : emfinger@isis.vanderbilt.edu, pranav.srinivas.kumar@gmail.com
-  github : finger563, pranav-srinivas-kumar
+  github : rosmod
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -23,7 +23,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://username.github.io
+production_url : http://rosmod.github.io
 
 gems: ["jekyll-sitemap"]
 
