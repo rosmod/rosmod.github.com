@@ -18,12 +18,16 @@ decoration, visualization, and interaction with the entities in the
 models and can write plugins which can be invoked by the user to
 operate on the model and possibly transform the model into artifacts.
 
+![WebGME Architecture](/images/interface.png){: .center-image }
+
 ## WebGME Usage
 
 WebGME provides the base of the user-interface front-end, as well as
 the model storage, versioning, and management infrastructure which
 allows the creation and invocation of plugins which act on parts of
 the created models.
+
+![Parts of the WebGME user interface](/images/GUI_Index.png){: .center-image }
 
 The main view aspect of WebGME modeling is split into three panels,
 arranged horizontally with each other into left, center, and right
