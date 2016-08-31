@@ -184,3 +184,33 @@ physics simulators such as
 The BBB cluster all run the same 16 GB debian image, using a 4.x
 kernel version. The image can be flashed to the card from the server
 (using `dd`) or from a windows machine (using `win32 disk imager`).
+
+On the BBB, the high speed Gigabit ethernet jack (`eth0`) provides
+access to the 10.1.1.0/24 network which connects to the DEV machine,
+and through which their ROSMOD code travels. A USB-Ethernet adapter
+(`eth1`) provides slower access to the physics machine through their
+191.168.127.0/24 network.
+
+For the BBB to be able to use the linux server (DEV) as a gateway for
+the internet, they must have their default route configured to go
+through the gateway, e.g.
+
+```bash
+route add default gw 10.1.1.249 dev eth0
+```
+
+If you're unsure about what the routes that are currently defined are,
+just check using (where master is defined in `/etc/hosts` as
+10.1.1.249):
+
+```bash
+root@node1:~# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         master          0.0.0.0         UG    0      0        0 eth0
+default         *               0.0.0.0         U     0      0        0 eth1
+10.1.1.0        *               255.255.255.0   U     0      0        0 eth0
+link-local      *               255.255.0.0     U     0      0        0 eth1
+191.168.127.0   *               255.255.255.0   U     0      0        0 eth1
+192.168.7.0     *               255.255.255.252 U     0      0        0 usb0
+```
