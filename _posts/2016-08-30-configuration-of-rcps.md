@@ -39,7 +39,17 @@ Since the webgme servers that we run (TES, ROSMOD) must support
 authentication, they must be able to run over HTTPS. This in turn
 requires that they have valid security certificates.
 
+The security certificates are managed by `letsencrypt`, which can be
+run on the server to update the security certificates for the
+associated domains whenever they expire (usually every 6 months).
+
 ## RCPS site setup
+
+The RCPS site is a set of statically hosted webpages (which were
+generated from ReStructured Text (RST) files that were compiled into
+the site webpages using python-sphinx. The site itself exists within
+the `gh-pages` branch of the `webgme-rosmod` repository; this branch
+has been checked out into `/home/jeb/docs/webgme-rosmod/docs`.
 
 ## ROSMOD server setup
 
@@ -59,7 +69,9 @@ which is a clone of github.com/rosmod/webgme-rosmod.
 
 The ROSMOD server also has an ancillary configuration file,
 `/etc/init/rosmod-dev.conf`, which allows you to run it in _dev_ mode,
-under which the **META** is able to be edited. This is possible only if the regular rosmod service is not currently running.  If so, then the rosmod-dev server can be controlled by
+under which the **META** is able to be edited. This is possible only
+if the regular rosmod service is not currently running.  If so, then
+the rosmod-dev server can be controlled by
 
 ```bash
 sudo start rosmod-dev
