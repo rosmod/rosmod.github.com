@@ -150,6 +150,24 @@ iptables --table nat --append POSTROUTING --out-interface eth0 -j MASQUERADE
 iptables-save > /home/jeb/utils/iptables.conf
 ```
 
+To see the current setting of the NAT iptables listing, just run
+
+```bash
+jeb@rcps:~$ sudo iptables -t nat -n -L
+Chain PREROUTING (policy ACCEPT)
+target     prot opt source               destination
+
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain POSTROUTING (policy ACCEPT)
+target     prot opt source               destination
+MASQUERADE  all  --  0.0.0.0/0            0.0.0.0/0
+```
+
 ## Remote access setup
 
 The server is configured (through `/etc/ssh/sshd_config`) to accept
