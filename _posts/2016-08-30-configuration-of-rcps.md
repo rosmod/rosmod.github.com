@@ -165,6 +165,22 @@ ssh -i /home/jeb/.ssh/id_rsa_jetsontk1 root@node1
 ssh -i /home/jeb/.ssh/id_rsa_jetsontk1 debian@node1
 ```
 
+The connection to the BBBs from the server goes through eth1 to the
+smart / programmable switch. The network that the server and the BBBs
+are on together is the 10.1.1.0/24 network, with the BBBs having
+address 1-32, and the server having 249.
+
 # SIM machine (windows)
 
+The SIM machine connects to the BBBs through the basic network switch,
+sharing the 191.168.127.0/24 network with them. The SIM machine runs
+physics simulators such as
+[Kerbal Space Program](http://www.kerbalspaceprogram.com),
+[Cities Skylines](http://www.citiesskylines.com),
+[SUMO](http://sumo.dlr.de/wiki/Main_Page), etc.
+
 # BBB Cluster
+
+The BBB cluster all run the same 16 GB debian image, using a 4.x
+kernel version. The image can be flashed to the card from the server
+(using `dd`) or from a windows machine (using `win32 disk imager`).
