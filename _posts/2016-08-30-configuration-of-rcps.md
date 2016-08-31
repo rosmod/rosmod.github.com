@@ -20,9 +20,9 @@ RCPS is composed of the following:
 The linux server provides the following roles:
 
 * NGINX web-server for providing port routing to
-** rcps.isis.vanderbilt.edu : a static page site
-** rosmod.rcps.isis.vanderbilt.edu : a ROSMOD webgme server
-** tes.rcps.isis.vanderbilt.edu : a TES GridlabD webgme server
+  * rcps.isis.vanderbilt.edu : a static page site
+  * rosmod.rcps.isis.vanderbilt.edu : a ROSMOD webgme server
+  * tes.rcps.isis.vanderbilt.edu : a TES GridlabD webgme server
 * Internet gateway (with NAT and masquerading) for the BBB cluster
 * Remote access (through key-authenticated ssh) for DEV and the cluster
 
