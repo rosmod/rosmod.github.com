@@ -43,6 +43,26 @@ The security certificates are managed by `letsencrypt`, which can be
 run on the server to update the security certificates for the
 associated domains whenever they expire (usually every 6 months).
 
+#### Renewal
+
+First you must stop the NGINX server (which redirects rcps.isis.vanderbilt.edu, tes.rcps.isis.vanderbilt.edu, and rosmod.rcps.isis.vanderbilt.edu):
+
+```bash
+sudo service nginx stop
+```
+To renew the keys for those sites (including both secure and insecure versions):
+
+```bash
+cd /home/jeb/Repositories/letsencrypt
+sudo ./letsencrypt-auto certonly -d rcps.isis.vanderbilt.edu -d tes.rcps.isis.vanderbilt.edu -d rosmod.rcps.isis.vanderbilt.edu -d www.rcps.isis.vanderbilt.edu -d www.tes.rcps.isis.vanderbilt.edu -d www.rosmod.rcps.isis.vanderbilt.edu
+```
+
+Now that the certificates are renewed, restart the NGINX server:
+
+```bash
+sudo service nginx start
+```
+
 ## RCPS site setup
 
 The RCPS site is a set of statically hosted webpages (which were
